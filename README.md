@@ -2,7 +2,7 @@
 
 # Pre-release Bundles and Documentation
 
-This location contains the release notes and the software modules that the installers use for pre-release versions.
+This repository contains user documentation and the prerelease software bundles used by the Control Panel installer.
 
 > ⚠️⚠️⚠️
 > To install and run OWLCMS, you need to use the [**OWLCMS Control Panel**](https://github.com/owlcms/owlcms-controlpanel/releases).
