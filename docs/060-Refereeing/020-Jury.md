@@ -79,11 +79,11 @@ There is no automatic stop.  When the jury's votes on the lift would overturn th
 
 The Chair starts the review with **Jury Deliberation** (or **Challenge**).  The referees' decision stays displayed, the jury lights are cleared, and the jury members vote again right away (the Chair asks for the vote verbally; the referees do not vote).  **Call for Votes** clears the jury lights again for a new vote.  **Summon Referees** calls the referees to the jury table if the Chair wants to hear them.
 
-For a four-member jury without VPT, the `automaticBreakNoVPT` option stops the competition when the four jury members agree against the referees.  This automatic stop requires the Jury Control page.  The votes on the lift then stay displayed so that the jury can write them down, and the Chair calls the vote with **Call for Votes**.  **Summon Referees** still calls the referees to the jury table.
+For a jury without the Adjudication Panel (3 members, 4 members without VPT, or 5 members), the `automaticBreakNoVPT` option stops the competition when the jury's vote on the lift is against the referees: unanimous, or a majority for a 5-member jury with VPT.  This automatic stop requires the Jury Control page.  The votes on the lift then stay displayed so that the jury can write them down, and the Chair calls the vote with **Call for Votes**.  With this option, a review started with **Jury Deliberation** or **Challenge** also keeps the votes on the lift displayed until the Chair calls for votes.  On a keypad or a jury box, Summon All is a Call for Votes during such a review, as for the Adjudication Panel; the three individual summon buttons call one referee to the jury table.  On the Jury Control screen, the **Summon Referees** (all) button is disabled during the review, and **Call for Votes** is used instead.
 
 ![210_Jury3_review](img/020-Jury/210_Jury3_review.png)
 
-When all the jury members have voted, the votes are revealed and the result waits for the Chair, exactly as for the Adjudication Panel: the rule for a No Lift, a confirmation for a Good Lift, or Cancel vote result.  The jury vote is optional: the Chair can also give the decision directly with the **No Lift** and **Good Lift** buttons.
+When all the jury members have voted, the votes are revealed and the result waits for the Chair, exactly as for the Adjudication Panel: the rule for a No Lift, a confirmation for a Good Lift, or Cancel vote result.  When the vote does not reach the jury's rule (not unanimous, or no majority for a 5-member jury with VPT), the referees' decision stands as called: Jury Control asks for a confirmation (**Confirm Decision**) instead of a rule, and the decision is shown on the boards and to the speaker with the reason "Referee Decision Stands as Called", for a No Lift as for a Good Lift.  The jury vote is optional: the Chair can also give the decision directly with the **No Lift** and **Good Lift** buttons.
 
 ![220_Jury3_attemptBoard_votes](img/020-Jury/220_Jury3_attemptBoard_votes.png)
 
@@ -98,7 +98,7 @@ By rule, the speaker announces the decision of the jury and the reason for which
 
 ![160_Speaker_decision](img/020-Jury/160_Speaker_decision.png)
 
-The Good Lift / No Lift buttons of the physical jury box apply the Chair's decision at once, without confirmation and without a rule, since the box has no screen.  For a No Lift without a rule, the speaker's dialog says, in red, to get the reason from the Technical Controller, announce the decision and the reason, and then call the next athlete; the timekeeper starts the next clock as usual.  If the jury uses neither, the Technical Controller relays the decision to the speaker, who enters it with the Good Lift / No Lift buttons of the dialog.
+The Good Lift / No Lift buttons of the physical jury box apply the Chair's decision at once, without confirmation and without a rule, since the box has no screen.  When the button matches a vote that did not reach the jury's rule, the decision is given the reason "Referee Decision Stands as Called".  For any other No Lift without a rule, the speaker's dialog says, in red, to get the reason from the Technical Controller, announce the decision and the reason, and then call the next athlete; the timekeeper starts the next clock as usual.  If the jury uses neither, the Technical Controller relays the decision to the speaker, who enters it with the Good Lift / No Lift buttons of the dialog.
 
 ## Deliberation, Challenge and Summon Rules
 
@@ -113,7 +113,7 @@ These rules apply to every jury size, on Jury Control, the jury box and the keyp
 
 - **Resume Competition** only ends an active jury break. It does not reset the displays or votes. If lifting already
   resumed automatically after a decision, Resume is a no-op. The next clock start resets the displays.
-- The **Summon Referees** buttons call the referees to the jury table, during a review or outside one.  The referees get a notification on their device if it is feedback-capable (such as a phone or a full-feedback keypad).  During an Adjudication Panel jury break, Summon Referees (all) is disabled on the screen because the keypad's and jury box's Summon All key means Call for Votes.
+- The **Summon Referees** buttons call the referees to the jury table, during a review or outside one.  The referees get a notification on their device if it is feedback-capable (such as a phone or a full-feedback keypad).  During an Adjudication Panel jury break, or during a review with the `automaticBreakNoVPT` option, Summon Referees (all) is disabled on the screen because the keypad's and jury box's Summon All key means Call for Votes.  The three individual buttons still summon one referee.
 - **Technical Issue** starts a technical break if the jury notices something is wrong with the platform or the equipment.
 
 ## Jury Devices
